@@ -1,0 +1,5 @@
+custom_name: Зависимости
+content:
+- dependency-management
+- dependency-scope
+- transitive-dependencies

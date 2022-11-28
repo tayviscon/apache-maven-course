@@ -1,0 +1,10 @@
+custom_name: Многомодульный проект
+content:
+- multimodule-project
+- plugin-management-and-dependency-management
+- resource-filtering
+- build-profiles
+- executable-jar
+- executable-jar-with-dependencies
+- release-plugin
+- creating-your-own-plugin

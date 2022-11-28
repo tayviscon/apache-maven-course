@@ -1,0 +1,7 @@
+custom_name: Вступление
+content:
+- introduction-into-maven
+- installing-the-software
+- plugins-mojo
+- jvm-arguments
+- archetype-plugin

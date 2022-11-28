@@ -1,0 +1,6 @@
+custom_name: Установка программного обеспечения
+content:
+- description
+- java-install
+- intellij-idea-install
+- maven-install

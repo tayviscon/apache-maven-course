@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":dependencies-dependency-management-theory:test" external.linked.project.path="$MODULE_DIR$/../../../../../dependencies/dependency-management/theory" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Apache_Maven" external.system.module.type="sourceSet" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <output-test url="file://$MODULE_DIR$/../../../../../dependencies/dependency-management/theory/out/test/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../dependencies/dependency-management/theory/src/test" />
+    <content url="file://$MODULE_DIR$/../../../../../dependencies/dependency-management/theory/test" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="Apache_Maven.dependencies-dependency-management-theory.main" />
+    <orderEntry type="module" module-name="Apache_Maven.util.main" />
+    <orderEntry type="module" module-name="Apache_Maven.util.test" production-on-test="" />
+    <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
+    <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
+  </component>
+  <component name="TestModuleProperties" production-module="Apache_Maven.dependencies-dependency-management-theory.main" />
+</module>

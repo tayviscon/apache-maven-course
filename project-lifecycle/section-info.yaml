@@ -1,0 +1,12 @@
+custom_name: Жизненный цикл проекта
+content:
+- clean-lifecycle
+- validate-compile-phases
+- test-phase
+- package-phase
+- packaging-type-war
+- linking-plugin-goal-to-phase
+- verify-phase
+- install-phase
+- deploy-phase
+- site-lifecycle

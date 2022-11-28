@@ -1,0 +1,13 @@
+type: theory
+custom_name: Теория
+files:
+- name: src/main/resources/slides/CommandLanguageSlide.png
+  visible: false
+- name: src/main/resources/slides/ApacheAntSlide.png
+  visible: false
+- name: src/main/resources/slides/ApacheMavenSlide.png
+  visible: false
+- name: src/main/resources/slides/GradleSlide.png
+  visible: false
+- name: src/main/java/Main.java
+  visible: true

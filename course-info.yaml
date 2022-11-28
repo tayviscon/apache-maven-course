@@ -1,0 +1,18 @@
+type: marketplace
+title: Apache Maven курс
+language: Russian
+summary: |-
+  Данный курс предоставлен для полноценного изучения Maven, он подойдет как людям совершенно не знакомым с данным фреймворком, так и для тех кто уже с ним работал:
+  - Вы сможете полноценно изучить данную технологию, от самых азов до более продвинутых нюансов связаных с применением Maven.
+  - По окончании данного курса Вы научитесь полноценно использовать Maven и сможете его применять в различных реальных проектах.
+vendor:
+  name: Tayviscon
+  email: tayviscon@gmail.com
+programming_language: Java
+content:
+- intro
+- pom
+- dependencies
+- project-lifecycle
+- multimodule-project
+

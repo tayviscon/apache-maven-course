@@ -1,0 +1,6 @@
+# Project exclude paths
+/.coursecreator/
+/.gradle/
+/intro/archetype-plugin/description/build/
+/intro/plugins-mojo/description/out/
+/intro/plugins-mojo/description/out/production/classes/

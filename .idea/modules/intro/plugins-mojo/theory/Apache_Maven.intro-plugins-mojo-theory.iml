@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":intro-plugins-mojo-theory" external.linked.project.path="$MODULE_DIR$/../../../../../intro/plugins-mojo/theory" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Apache_Maven" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../intro/plugins-mojo/theory">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../intro/plugins-mojo/theory/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../intro/plugins-mojo/theory/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../intro/plugins-mojo/theory/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

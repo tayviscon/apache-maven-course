@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="distributionType" value="WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/dependencies/dependency-management/theory" />
+            <option value="$PROJECT_DIR$/dependencies/dependency-scope/theory" />
+            <option value="$PROJECT_DIR$/dependencies/transitive-dependencies/theory" />
+            <option value="$PROJECT_DIR$/intro/archetype-plugin/description" />
+            <option value="$PROJECT_DIR$/intro/archetype-plugin/theory" />
+            <option value="$PROJECT_DIR$/intro/installing-the-software/description" />
+            <option value="$PROJECT_DIR$/intro/installing-the-software/intellij-idea-install" />
+            <option value="$PROJECT_DIR$/intro/installing-the-software/java-install" />
+            <option value="$PROJECT_DIR$/intro/installing-the-software/maven-install" />
+            <option value="$PROJECT_DIR$/intro/introduction-into-maven/description" />
+            <option value="$PROJECT_DIR$/intro/introduction-into-maven/theory" />
+            <option value="$PROJECT_DIR$/intro/jvm-arguments/description" />
+            <option value="$PROJECT_DIR$/intro/jvm-arguments/theory" />
+            <option value="$PROJECT_DIR$/intro/plugins-mojo/description" />
+            <option value="$PROJECT_DIR$/intro/plugins-mojo/theory" />
+            <option value="$PROJECT_DIR$/multimodule-project/build-profiles/theory" />
+            <option value="$PROJECT_DIR$/multimodule-project/creating-your-own-plugin/theory" />
+            <option value="$PROJECT_DIR$/multimodule-project/executable-jar-with-dependencies/theory" />
+            <option value="$PROJECT_DIR$/multimodule-project/executable-jar/theory" />
+            <option value="$PROJECT_DIR$/multimodule-project/multimodule-project/theory" />
+            <option value="$PROJECT_DIR$/multimodule-project/plugin-management-and-dependency-management/theory" />
+            <option value="$PROJECT_DIR$/multimodule-project/release-plugin/theory" />
+            <option value="$PROJECT_DIR$/multimodule-project/resource-filtering/theory" />
+            <option value="$PROJECT_DIR$/pom/project-object-model/theory" />
+            <option value="$PROJECT_DIR$/pom/super-pom/theory" />
+            <option value="$PROJECT_DIR$/project-lifecycle/clean-lifecycle/theory" />
+            <option value="$PROJECT_DIR$/project-lifecycle/deploy-phase/theory" />
+            <option value="$PROJECT_DIR$/project-lifecycle/install-phase/theory" />
+            <option value="$PROJECT_DIR$/project-lifecycle/linking-plugin-goal-to-phase/theory" />
+            <option value="$PROJECT_DIR$/project-lifecycle/package-phase/theory" />
+            <option value="$PROJECT_DIR$/project-lifecycle/packaging-type-war/theory" />
+            <option value="$PROJECT_DIR$/project-lifecycle/site-lifecycle/theory" />
+            <option value="$PROJECT_DIR$/project-lifecycle/test-phase/theory" />
+            <option value="$PROJECT_DIR$/project-lifecycle/validate-compile-phases/theory" />
+            <option value="$PROJECT_DIR$/project-lifecycle/verify-phase/theory" />
+            <option value="$PROJECT_DIR$/util" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

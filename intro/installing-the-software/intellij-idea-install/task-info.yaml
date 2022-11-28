@@ -1,0 +1,5 @@
+type: theory
+custom_name: Установка Intellij IDEA
+files:
+- name: src/Main.java
+  visible: true
