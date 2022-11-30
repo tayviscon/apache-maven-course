@@ -1,5 +1,7 @@
 type: theory
-files:
-- name: src/Main.java
-  visible: true
 custom_name: Теория
+files:
+- name: src/main/java/Main.java
+  visible: true
+- name: src/main/resources/slides/PluginsGoalsMojo.png
+  visible: false

@@ -1,48 +1,121 @@
+Давайте же разберем из чего на самом деле состоит **Maven** и какая роль у 
+плагинов (*Plugin*), целей (*Goal*).
 
-This is a task description file.
-Its content will be displayed to a learner
-in the **Task Description** window.
+Maven - это совокупность плагинов, которые являются его основной частью. Таким образом
+наше непосредственное взаимодействие с Apache Maven не что иное, как взаимодействие с 
+этими плагинами.  
 
-It supports both Markdown and HTML.
-To toggle the format, you can rename **task.md**
-to **task.html**, or vice versa.
-The default task description format can be changed
-in **Preferences | Tools | Education**,
-but this will not affect any existing task description files.
+Однако если мы копнем чуть глубже и попытаемся изучить исходный код
+Maven, то увидим, что каждый плагин представляет собой Java проект, который
+состоит из набора классов и главные из этих классов как раз таки **goal**.
 
-The following features are available in
-**task.md/task.html** which are specific to the EduTools plugin:
+Стоит отметить, что каждый плагин может содержать количество goal от одного
+до бесконечности, однако плагины должны иметь одну обязательную цель `help`,
+которая нужна для того, чтобы описать плагин.  
 
-- Hints can be added anywhere in the task text.
-Type "hint" and press Tab.
-Hints should be added to an empty line in the task text.
-In hints you can use both HTML and Markdown.
-<div class="hint">
+![Command Language](src/main/resources/slides/PluginsGoalsMojo.png)
 
-Text of your hint
+Реализация метода `execute()` и есть то, что выполняет наша **goal**
+в плагине. Таким образом, все, что мы будем в дальнейшем делать - работа с плагинами
+посредством вызова у них **goal** или их совокупности.
 
-</div>
+Давайте скачаем, согласно [инструкции](https://maven.apache.org/scm.html),
+исходный код Apache Maven, чтобы более подробно разобраться в нем.
 
-- You may need to refer your learners to a particular lesson,
-task, or file. To achieve this, you can use the in-course links.
-Specify the path using the `[link_text](course://lesson1/task1/file1)` format.
+Главный пакет, который нас интересует - **plugins**, так как именно плагины являются
+ядром Apache Maven. На этом уроке мы рассмотрим наиболее используемые плагины из пакета
+**core**.  
 
-- You can insert shortcuts in the task description.
-While **task.html/task.md** is open, right-click anywhere
-on the **Editor** tab and choose the **Insert shortcut** option
-from the context menu.
-For example: &shortcut:FileStructurePopup;.
+![Command Language](src/main/resources/slides/MavenSourceHierarchy.png)
 
-- Insert the &percnt;`IDE_NAME`&percnt; macro,
-which will be replaced by the actual IDE name.
-For example, **%IDE_NAME%**.
+Давайте рассмотрим `maven-compiler-plugin`, который занимается компиляцией нашего
+проекта. Для этого откройте **maven-compiler-plugin** как отдельный проект при помощи
+IntelliJ IDEA.  
 
-- Insert PSI elements, by using links like
-`[element_description](psi_element://link.to.element)`.
-To get such a link, right-click the class or method
-and select **Copy Reference**.
-Then press &shortcut:EditorPaste; to insert the link where appropriate.
-For example, a [link to the "contains" method](psi_element://java.lang.String#contains).
+![Command Language](src/main/resources/slides/MavenCompilerMojoHierarchy.png)
 
-- You can add link to file using **full path** like this:
-  `[file_link](file://lesson1/task1/file.txt)`.
+Давайте рассмотрим класс `CompilerMojo`. Как мы можем увидеть **CompilerMojo** это
+цель с названием ***compile*** и которая наследуется от `AbstractCompilerMojo`, который
+в свою очередь наследуется от класса `AbstractMojo`.
+```java
+@Mojo( name = "compile", defaultPhase = LifecyclePhase.COMPILE, threadSafe = true, requiresDependencyResolution = ResolutionScope.COMPILE)
+public class CompilerMojo extends AbstractCompilerMojo {
+    ...
+}
+```
+
+Необходимо обратить внимание на то, что наш `AbstractMojo` имплементирует интерфейс 
+`Mojo`, который содержит три метода. В частности метод `execute()` 
+содержащий основной функционал для выполнения **goal**, а также методы
+`setLog(Log var1)` и  `getLog()`, но так как эти методы постоянно повторяются из одного
+**Mojo**-объекта в другой, они переопределены в `AbstractMojo`. Таким образом, нам для
+создания своей **goal** необходимо просто наследоваться от класса **AbstractMojo**
+и реализовать свой метод **execute()**.
+```java
+public interface Mojo {
+    String ROLE = Mojo.class.getName();
+
+    void execute() throws MojoExecutionException, MojoFailureException;
+
+    void setLog(Log var1);
+
+    Log getLog();
+}
+```
+
+Стоит также отметить, что наш `CompilerPlugin` состоит из трех основных целей:
+> **compile** - для того, чтобы скомпилировать наш исходный код
+
+> **testCompile** - для того, чтобы скомпилировать исходный код тестов
+
+> **help** - для описания нашего плагина 
+
+Давайте попробуем вызвать цель **help**. Для этого запустим из терминала команду:
+> `mvn compiler:help`
+
+Теперь в выводе мы можем увидеть описание нашего плагина:
+```text
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------< org.apache.maven.plugins:maven-compiler-plugin >-----------
+[INFO] Building Apache Maven Compiler Plugin 3.11.0-SNAPSHOT
+[INFO] ----------------------------[ maven-plugin ]----------------------------
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:help (default-cli) @ maven-compiler-plugin ---
+[INFO] Apache Maven Compiler Plugin 3.10.1
+  The Compiler Plugin is used to compile the sources of your project.
+
+This plugin has 3 goals:
+
+compiler:compile
+  Compiles application sources
+
+compiler:help
+  Display help information on maven-compiler-plugin.
+  Call mvn compiler:help -Ddetail=true -Dgoal=<goal-name> to display parameter
+  details.
+
+compiler:testCompile
+  Compiles application test sources.
+
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.316 s
+[INFO] Finished at: 2022-11-30T17:33:12+03:00
+[INFO] ------------------------------------------------------------------------
+```
+
+Строка `[INFO] BUILD SUCCESS` символизирует нам о том, что исполнение плагина успешно завершилось
+и теперь мы видим его описание. Для того чтобы получить более подробное
+описание, мы можем вызвать команду **help** с дополнительными параметрами:
+
+> `mvn compiler:help -Ddetail=true`
+
+Таким образом, мы поняли, что вызвать какой-либо **plugin** и его **goal** весьма просто,
+нам необходимо всего-лишь набрать название плагина и через двоеточие его **goal**.
+Помимо этого мы убедились, что **goal** это всего лишь обычный Java класс, который 
+наследуется от базового класса `AbstractMojo` и в нем переопределен лишь единственный
+главный метод `execute()`, в котором содержится функционал для выполнения основной
+задачи нашей **goal**.
