@@ -5,6 +5,8 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../../../intro/jvm-arguments/theory/src">
       <sourceFolder url="file://$MODULE_DIR$/../../../../../intro/jvm-arguments/theory/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../../../intro/jvm-arguments/theory/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../../../intro/jvm-arguments/theory/src/main/resources" type="java-resource" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

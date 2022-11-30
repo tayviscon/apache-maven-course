@@ -1,5 +1,13 @@
 type: theory
-files:
-- name: src/Main.java
-  visible: true
 custom_name: Теория
+files:
+- name: src/main/java/Main.java
+  visible: true
+- name: src/main/resources/slides/EditConigurationsScreen.png
+  visible: false
+- name: src/main/resources/slides/FilledArguments.png
+  visible: false
+- name: src/main/resources/slides/DebugArguments.png
+  visible: false
+- name: src/main/resources/slides/SystemGetProperties.png
+  visible: false
