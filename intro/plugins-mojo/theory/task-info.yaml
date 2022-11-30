@@ -5,3 +5,7 @@ files:
   visible: true
 - name: src/main/resources/slides/PluginsGoalsMojo.png
   visible: false
+- name: src/main/resources/slides/MavenCompilerMojoHierarchy.png
+  visible: false
+- name: src/main/resources/slides/MavenSourceHierarchy.png
+  visible: false
